@@ -104,20 +104,11 @@
   <div id="content-container">
 
   <?php if ($is_front): ?>
-  <?php if (theme_get_setting('slideshow_display', 'corporate')): ?>
   <div id="slideshow">
     <div id="slides">
-      <div class="slides_container">
         <img src="<?php print file_create_url(theme_get_setting('bg_path')); ?>" />
-      </div>
-      <div class="slides_nav">
-        <a href="#" class="prev"></a>
-        <a href="#" class="next"></a>
-      </div>
     </div>
   </div>
-  <?php endif; ?>
-  
     <?php if ($page['front_welcome']): ?>
       <div id="front-welcome"> <?php print render($page['front_welcome']); ?></div>
     <?php endif; ?>

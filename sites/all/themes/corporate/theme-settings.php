@@ -63,21 +63,7 @@ function corporate_form_system_theme_settings_alter(&$form, &$form_state) {
     '#default_value' => theme_get_setting('facebook_username', 'corporate'),
 	'#description'   => t("Enter your Facebook username."),
   );
-  $form['corporate_settings']['slideshow'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Front Page Slideshow'),
-    '#collapsible' => TRUE,
-    '#collapsed' => FALSE,
-  );
-  $form['corporate_settings']['slideshow']['slideshow_display'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Show slideshow'),
-    '#default_value' => theme_get_setting('slideshow_display','corporate'),
-    '#description'   => t("Check this option to show Slideshow in front page. Uncheck to hide."),
-  );
-  $form['corporate_settings']['slideshow']['slideimage'] = array(
-    '#markup' => t('To change the Slide Images, Replace the slide-image-1.jpg, slide-image-2.jpg and slide-image-3.jpg in the images folder of the corporate theme folder.'),
-  );
+  
   $form['corporate_settings']['footer'] = array(
     '#type' => 'fieldset',
     '#title' => t('Footer'),
