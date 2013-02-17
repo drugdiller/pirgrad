@@ -96,6 +96,63 @@ function corporate_form_system_theme_settings_alter(&$form, &$form_state) {
     '#default_value' => theme_get_setting('footer_credits','corporate'),
     '#description'   => t("Check this option to show site credits in footer. Uncheck to hide."),
   );
+	
+  // Container fieldset
+  $form['slideshow'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Slideshow'),
+  );
+  
+  // Default path for image
+  $bg_path = theme_get_setting('bg_path');
+  if (file_uri_scheme($bg_path) == 'public') {
+    $bg_path = file_uri_target($bg_path);
+  }
+  
+  // Helpful text showing the file name, disabled to avoid the user thinking it can be used for any purpose.
+  $form['slideshow']['bg_path'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Path to background image',
+    '#default_value' => $bg_path,
+    '#disabled' => TRUE,
+  );
+
+  // Upload field
+  $form['slideshow']['bg_upload'] = array(
+    '#type' => 'file',
+    '#title' => 'Upload background image',
+    '#description' => 'Upload a new image for the background.',
+  );
+
+  // Attach custom submit handler to the form
+  $form['#submit'][] = 'corporate_settings_submit';
+		
+}
+
+
+function corporate_settings_submit($form, &$form_state) {
+  $settings = array();
+  // Get the previous value
+  $previous = 'public://' . $form['slideshow']['bg_path']['#default_value'];
+  
+  $file = file_save_upload('bg_upload');
+  if ($file) {
+    $parts = pathinfo($file->filename);
+    $destination = 'public://' . $parts['basename'];
+    $file->status = FILE_STATUS_PERMANENT;
+    
+    if(file_copy($file, $destination, FILE_EXISTS_REPLACE)) {
+      $_POST['bg_path'] = $form_state['values']['bg_path'] = $destination;
+      // If new file has a different name than the old one, delete the old
+      if ($destination != $previous) {
+        drupal_unlink($previous);
+      }
+    }
+  } else {
+    // Avoid error when the form is submitted without specifying a new image
+    $_POST['bg_path'] = $form_state['values']['bg_path'] = $previous;
+  }
+  
 }
 
 ?>

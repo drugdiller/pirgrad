@@ -108,9 +108,7 @@
   <div id="slideshow">
     <div id="slides">
       <div class="slides_container">
-        <img src="<?php print base_path() . drupal_get_path('theme', 'corporate') . '/images/slide-image-1.jpg'; ?>"/>
-        <img src="<?php print base_path() . drupal_get_path('theme', 'corporate') . '/images/slide-image-2.jpg'; ?>"/>
-        <img src="<?php print base_path() . drupal_get_path('theme', 'corporate') . '/images/slide-image-3.jpg'; ?>"/>
+        <img src="<?php print file_create_url(theme_get_setting('bg_path')); ?>" />
       </div>
       <div class="slides_nav">
         <a href="#" class="prev"></a>
