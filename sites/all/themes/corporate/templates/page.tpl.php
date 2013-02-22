@@ -222,10 +222,10 @@
    <?php if (theme_get_setting('footer_copyright', 'corporate') || theme_get_setting('footer_credits', 'corporate')): ?>
     <div id="footer">
       <?php if (theme_get_setting('footer_copyright', 'corporate')): ?>
-        <div class="copyright"><?php print t('Copyright'); ?> &copy; <?php echo date("Y"); ?>, <?php print $site_name; ?>.</div>
+        <div class="copyright">&copy; <?php echo date("Y"); ?> <?php print $site_name; ?></div>
       <?php endif; ?>
       <?php if (theme_get_setting('footer_credits', 'corporate')): ?>
-        <div class="credit"><?php print t('Thanks to'); ?> <a href="http://www.sidepon.com" target="_blank">Sidepon</a> | <?php print t('Designed by'); ?> <a href="http://www.devsaran.com" target="_blank">Devsaran</a>.</div>
+        <div class="credit">Разработка — <a href="http://www.pronauku.com" target="_blank">pronauku.com</a>.</div>
       <?php endif; ?>
     </div>
    <?php endif; ?>
