@@ -93,12 +93,15 @@
 				      		)
 				    		),
 				    	'sites/default/files/product_photo/'.$image->filename,
-				    	array('html'=>TRUE, 'attributes' => array('target'=>'_blank'))
+				    	array('html'=>TRUE, 'attributes' => array('class'=>'fancybox', 'rel'=>'gallery1'))
 				  );
 			}
 			?>
 		</div>
 	  	<div class="content-body">
+				
+				
+				
 		<?php print $node->body['und'][0]['value']; ?>
 	  	</div> <!-- /.content -->
 

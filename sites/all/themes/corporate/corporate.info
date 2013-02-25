@@ -2,9 +2,14 @@ name = Simple Corporate
 description = Simple Corporate is a premium Drupal 7 theme. Please consider a <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40devsaran%2ecom&lc=US&item_name=Donations%20to%20Simple%20Corporate%20Theme&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest" target="_blank">Small Donations</a>. <br/>Paypal ID : donation@devsaran.com. Developed by <a href="http://www.devsaran.com" target="_blank">devsaran.com</a>.
 core = 7.x
 engine = phptemplate
-stylesheets[all][] = style.css
+scripts[] = js/jquery.fancybox.js
 ; scripts[] = js/superfish.js
 ; scripts[] = js/effects.js
+scripts[] = js/custom.script.js
+
+stylesheets[all][] = style.css
+stylesheets[all][] = css/jquery.fancybox.css
+
 regions[sidebar_second] = Second Sidebar
 regions[sidebar_first]  = First Sidebar
 regions[front_welcome]  = Front Welcome
@@ -46,4 +51,3 @@ version = "7.x-1.5"
 core = "7.x"
 project = "corporate"
 datestamp = "1348428099"
-

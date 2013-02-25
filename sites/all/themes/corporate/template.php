@@ -107,27 +107,3 @@ function corporate_preprocess_node(&$variables) {
     $variables['classes_array'][] = 'node-full';
   }
 }
-
-/**
- * Add css for color style.
- */
-if (theme_get_setting('color_scheme', 'corporate') == 'dark') {
-  drupal_add_css(drupal_get_path('theme', 'corporate') . '/css/color-schemes.css');
-}
-
-/**
- * Add css for background image.
- */
-if (!theme_get_setting('backgroundimg', 'corporate')) {
-  drupal_add_css(drupal_get_path('theme', 'corporate') . '/css/background.css');
-}
-
-/**
- * Add javascript files for front-page jquery slideshow.
- */
-if (drupal_is_front_page()) {
-  if (theme_get_setting('slideshow_display', 'corporate')){
-    drupal_add_js(drupal_get_path('theme', 'corporate') . '/js/slides.min.jquery.js');
-    drupal_add_js(drupal_get_path('theme', 'corporate') . '/js/slider.js');
-  }
-}
