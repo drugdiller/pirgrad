@@ -80,6 +80,7 @@
 <?php //здесь выводим то что надо на отдельные ноды ?>
 		<div class="photo_product">
 			<?php 
+			if (isset($node->field_photo['und']))
 			foreach ($node->field_photo['und'] as $p) {
 				$image = file_load($p['fid']);
 				if ($image)
@@ -98,30 +99,29 @@
 			}
 			?>
 		</div>
-	  	<div class="content-body">
-				
-				
-				
-		<?php print $node->body['und'][0]['value']; ?>
-	  	</div> <!-- /.content -->
+	  <div class="content-body">
+			<?php print $node->body['und'][0]['value']; ?>
+	  </div> <!-- /.content -->
 
 
 <?php else: ?>
 <?php //здесь выводим то что надо для списка нод ?>
 
 		<?php
-		$image = file_load($node->field_photo['und'][0]['fid']); 
-		print l(
-			theme('image_style', 
-		    	array(
-		      		'style_name' => 'thumbnail', 
-		      		'path' => $image->uri, 
-		      		'getsize' =>FALSE
-		    		)
-		  		),
-		  	'node/'.$node->nid,
-		  	array('html'=>TRUE)
-		);
+		if (isset($node->field_photo['und'])) {
+			$image = file_load($node->field_photo['und'][0]['fid']); 
+			print l(
+				theme('image_style', 
+			    	array(
+			      		'style_name' => 'thumbnail', 
+			      		'path' => $image->uri, 
+			      		'getsize' =>FALSE
+			    		)
+			  		),
+			  	'node/'.$node->nid,
+			  	array('html'=>TRUE)
+			);
+		}
 		?>
 		<h2><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
 
