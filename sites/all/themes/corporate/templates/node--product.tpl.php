@@ -100,7 +100,8 @@
 			?>
 		</div>
 	  <div class="content-body">
-			<?php print $node->body['und'][0]['value']; ?>
+		<?php 
+		if (isset($node->body['und'][0]['value']))	print $node->body['und'][0]['value']; ?>
 	  </div> <!-- /.content -->
 
 

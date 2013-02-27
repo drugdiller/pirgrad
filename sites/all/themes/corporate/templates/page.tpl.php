@@ -80,9 +80,9 @@
         <?php if (theme_get_setting('social_links', 'corporate')): ?>
           <div class="social-icons">
            <ul>
-            <li><a href="<?php print $front_page; ?>rss.xml"><img src="<?php print base_path() . check_plain(drupal_get_path('theme', 'corporate')) . '/images/rss.png'; ?>" alt="RSS Feed"/></a></li>
-            <li><a href="http://www.facebook.com/<?php echo check_plain(theme_get_setting('facebook_username', 'corporate')); ?>" target="_blank" rel="me"><img src="<?php print base_path() . drupal_get_path('theme', 'corporate') . '/images/facebook.png'; ?>" alt="Facebook"/></a></li>
-            <li><a href="http://www.twitter.com/<?php echo check_plain(theme_get_setting('twitter_username', 'corporate')); ?>" target="_blank" rel="me"><img src="<?php print base_path() . drupal_get_path('theme', 'corporate') . '/images/twitter.png'; ?>" alt="Twitter"/></a></li>
+						 <li><a href="http://vk.com/club45742868" target="_blank"><img src="<?php print base_path() . drupal_get_path('theme', 'corporate') . '/images/vk.png'; ?>" alt="Группа Вконтакте"/></a></li>
+            <!--<li><a href="http://www.facebook.com/<?php echo check_plain(theme_get_setting('facebook_username', 'corporate')); ?>" target="_blank" rel="me"><img src="<?php print base_path() . drupal_get_path('theme', 'corporate') . '/images/facebook.png'; ?>" alt="Facebook"/></a></li>
+            <li><a href="http://www.twitter.com/<?php echo check_plain(theme_get_setting('twitter_username', 'corporate')); ?>" target="_blank" rel="me"><img src="<?php print base_path() . drupal_get_path('theme', 'corporate') . '/images/twitter.png'; ?>" alt="Twitter"/></a></li>-->
            </ul>
           </div>
         <?php endif; ?>
