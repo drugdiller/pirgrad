@@ -294,15 +294,15 @@ h6 {
 }
 
 .logo .sitename h1 a:link, .logo .sitename h1 a:visited{
-	color:#333;
+	color:#3e5496;
 }
 
 .logo .sitename h1 a:hover{
-	color:#666;
+	color:#3e5496;
 }
 
 .logo .sitename h2 {
-	color:#888;
+	color:#3e5496;
 	font-size:16px;
 	font-weight:normal;
 }
@@ -328,7 +328,7 @@ h6 {
 	height:40px;
 	text-transform:uppercase;
 	clear:both;
-	background:#333;
+	background:#3e5496;
 	border-top:1px solid #111;
 	border-bottom:1px solid #000;
 	}
@@ -336,7 +336,6 @@ h6 {
 #main-menu {
 	width:925px;
 	margin: 0 auto 0;
-
 	}
 	
 #main-menu ul {
@@ -358,8 +357,7 @@ h6 {
 	}
 	
 #main-menu li a {
-
-	color: #bbb;
+	color: #fefee8;
 	display: block;
   margin: 0;
 	padding: 0px 10px;
@@ -391,7 +389,7 @@ h6 {
 	
 #main-menu li li a, #main-menu li li a:link, #main-menu li li a:visited {
 	background: #444;
-	color: #ddd;
+	color: #ccc;
 	width: 148px; 
 	font-family: Arial, Tahoma, Verdana;
 	margin: 0;
@@ -1195,4 +1193,12 @@ h3.comment-title a{
 
 .content-body {
 	clear:both;
+}
+
+.phone {
+	float: right;
+	font-size: 27px;
+	padding: 23px 0 0 0;
+	width: 250px;
+	height: 31px;
 }

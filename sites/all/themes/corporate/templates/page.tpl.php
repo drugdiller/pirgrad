@@ -77,6 +77,7 @@
             <h1><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a></h1>
             <h2><?php print $site_slogan; ?></h2>
          </div>
+				 
         <?php if (theme_get_setting('social_links', 'corporate')): ?>
           <div class="social-icons">
            <ul>
@@ -86,6 +87,7 @@
            </ul>
           </div>
         <?php endif; ?>
+				<div class="phone">+7 (495) 724 79 93</div>
       </div>
 	
     <div id="menu-container">

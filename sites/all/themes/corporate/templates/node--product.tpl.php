@@ -107,7 +107,7 @@
 
 <?php else: ?>
 <?php //здесь выводим то что надо для списка нод ?>
-
+		<h2><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
 		<?php
 		if (isset($node->field_photo['und'])) {
 			$image = file_load($node->field_photo['und'][0]['fid']); 
@@ -124,8 +124,6 @@
 			);
 		}
 		?>
-		<h2><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-
 <?php endif;?>
 
 
