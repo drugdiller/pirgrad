@@ -29,11 +29,29 @@ function corporate_preprocess_html(&$vars) {
  */
 function corporate_breadcrumb($variables) {
   $breadcrumb = $variables['breadcrumb'];
+	
+	// change crumbs (add termin) if product
+	if (arg(0) == 'node') {
+		$node = node_load(arg(1));
+	}
+	if(isset($node) && isset($node->type)) {
+	  $type = $node->type;
+		if ($type == 'product') {
+			// get tid frome nid
+			$tid = db_query('SELECT tid FROM {taxonomy_index} WHERE nid = :nid', array(':nid' => $node->nid))->fetchField();
+			$term = taxonomy_term_load($tid);
+	    $breadcrumb = array();
+	    $breadcrumb[] = l(t('Home'), '<front>');
+	    $breadcrumb[] = l($term->name, 'taxonomy/term/'.$tid);
+		}
+	}
+  
   if (!empty($breadcrumb)) {
     // Use CSS to hide titile .element-invisible.
     $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
     // comment below line to hide current page to breadcrumb
-	$breadcrumb[] = drupal_get_title();
+		$breadcrumb[] = drupal_get_title();
+		//	print_r($breadcrumb);
     $output .= '<nav class="breadcrumb">' . implode(' » ', $breadcrumb) . '</nav>';
     return $output;
   }
