@@ -94,8 +94,9 @@
 				      		)
 				    		),
 				    	'sites/default/files/product_photo/'.$image->filename,
-				    	array('html'=>TRUE, 'attributes' => array('class'=>'fancybox', 'rel'=>'gallery1'))
+				    	array('html'=>TRUE, 'attributes' => array('class'=>'fancybox', 'rel'=>'gallery1', 'title' => $p['title']))
 				  );
+
 			}
 			?>
 		</div>

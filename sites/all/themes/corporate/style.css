@@ -294,15 +294,15 @@ h6 {
 }
 
 .logo .sitename h1 a:link, .logo .sitename h1 a:visited{
-	color:#3e5496;
+	color:#555;
 }
 
 .logo .sitename h1 a:hover{
-	color:#3e5496;
+	color:#555;
 }
 
 .logo .sitename h2 {
-	color:#3e5496;
+	color:#555;
 	font-size:16px;
 	font-weight:normal;
 }
@@ -328,7 +328,7 @@ h6 {
 	height:40px;
 	text-transform:uppercase;
 	clear:both;
-	background:#3e5496;
+	background:#0593C7;
 	border-top:1px solid #111;
 	border-bottom:1px solid #000;
 	}
@@ -1201,4 +1201,5 @@ h3.comment-title a{
 	padding: 23px 0 0 0;
 	width: 250px;
 	height: 31px;
+	color: #555;
 }
