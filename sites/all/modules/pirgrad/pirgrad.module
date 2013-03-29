@@ -1,0 +1,13 @@
+<?php
+
+function pirgrad_menu_alter(&$items) {
+    $items['taxonomy/term/%taxonomy_term'] = array(
+        'title' => 'Taxonomy term',
+        'title callback' => 'taxonomy_term_title',
+        'title arguments' => array(2),
+        'page callback' => 'module_taxonomy_term_page',
+        'page arguments' => array(2),
+        'access arguments' => array('access content'),
+        'file' => drupal_get_path('module', 'pirgrad').'/taxonomy.inc',
+   );
+}

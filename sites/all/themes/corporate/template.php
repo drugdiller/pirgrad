@@ -35,14 +35,19 @@ function corporate_breadcrumb($variables) {
 		$node = node_load(arg(1));
 	}
 	if(isset($node) && isset($node->type)) {
-	  $type = $node->type;
-		if ($type == 'product') {
+		if ($node->type == 'product') {
 			// get tid frome nid
 			$tid = db_query('SELECT tid FROM {taxonomy_index} WHERE nid = :nid', array(':nid' => $node->nid))->fetchField();
 			$term = taxonomy_term_load($tid);
 	    $breadcrumb = array();
 	    $breadcrumb[] = l(t('Home'), '<front>');
-	    $breadcrumb[] = l($term->name, 'taxonomy/term/'.$tid);
+			
+			$parent = current(taxonomy_get_parents($tid));
+			if (isset($parent->tid)) {
+				$breadcrumb[] = l($parent->name, 'taxonomy/term/'.$parent->tid);
+			}
+			
+	    $breadcrumb[] = l($term->name, 'taxonomy/term/'.$tid);	
 		}
 	}
   
