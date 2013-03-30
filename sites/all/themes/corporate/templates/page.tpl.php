@@ -82,6 +82,7 @@
           <div class="social-icons">
            <ul>
 						 <li><a href="http://vk.com/club45742868" target="_blank"><img src="<?php print base_path() . drupal_get_path('theme', 'corporate') . '/images/vk.png'; ?>" alt="Группа Вконтакте"/></a></li>
+						 <li><a href="http://www.odnoklassniki.ru/group/51824525181139" target="_blank"><img src="<?php print base_path() . drupal_get_path('theme', 'corporate') . '/images/odnoklassniki.png'; ?>" alt="Группа в Одноклассниках"/></a></li>
             <!--<li><a href="http://www.facebook.com/<?php echo check_plain(theme_get_setting('facebook_username', 'corporate')); ?>" target="_blank" rel="me"><img src="<?php print base_path() . drupal_get_path('theme', 'corporate') . '/images/facebook.png'; ?>" alt="Facebook"/></a></li>
             <li><a href="http://www.twitter.com/<?php echo check_plain(theme_get_setting('twitter_username', 'corporate')); ?>" target="_blank" rel="me"><img src="<?php print base_path() . drupal_get_path('theme', 'corporate') . '/images/twitter.png'; ?>" alt="Twitter"/></a></li>-->
            </ul>
