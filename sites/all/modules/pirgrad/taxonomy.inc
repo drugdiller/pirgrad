@@ -5,16 +5,14 @@ function module_taxonomy_term_page($term) {
   switch($term->vocabulary_machine_name) {
     case 'category': {
 			
-			
 			$terms = taxonomy_get_children($term->tid, $term->vid);
 			
 			if ($terms) {
 				$items = array();
 				foreach ($terms as $term) {
 				  $items[] = l($term->name, 'taxonomy/term/' . $term->tid);
-				//	debug($term);
 				}
-	      $output = theme('item_list', array('items' => $items));
+				$output = theme('subtaxonomy_list', $items);
 	      return $output;
 			}
 			else {
@@ -29,4 +27,4 @@ function module_taxonomy_term_page($term) {
       return taxonomy_term_page($term);
     }
   }
-}  
+}

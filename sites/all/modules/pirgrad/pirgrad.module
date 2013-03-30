@@ -11,3 +11,19 @@ function pirgrad_menu_alter(&$items) {
         'file' => drupal_get_path('module', 'pirgrad').'/taxonomy.inc',
    );
 }
+
+function pirgrad_theme() {
+  return array(
+    'subtaxonomy_list' => array(
+      'variables' => array(),
+    ),
+  );
+}
+
+function theme_subtaxonomy_list($variables) {
+	$output = '';
+	foreach ($variables as $term) {
+	  $output .= '<h2>'.$term.'</h2>';
+	}
+  return $output;
+}
